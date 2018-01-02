@@ -6,6 +6,15 @@
     android:orientation="vertical"
     tools:context="com.zyzs.ewin.dialfunc.MenuActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:textSize="24sp"
+        android:background="@color/black"
+        android:text="表盘Func"
+        android:textColor="@color/white"
+        android:gravity="center"/>
+
     <Button
         android:id="@+id/btn_compass"
         android:layout_width="match_parent"
