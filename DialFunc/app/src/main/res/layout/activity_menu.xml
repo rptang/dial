@@ -21,4 +21,10 @@
         android:layout_height="wrap_content"
         android:text="指南针"/>
 
+    <Button
+        android:id="@+id/btn_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="液晶数字"/>
+
 </LinearLayout>
