@@ -17,7 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".CompassActivity" />
-        <activity android:name=".NumberActivity"></activity>
+        <activity android:name=".NumberActivity" />
+        <activity android:name=".SVGActivity" />
+        <activity android:name=".TemperatureActivity" />
+        <activity android:name=".PM2d5Activity" />
+        <activity android:name=".WallClockActivity" />
+        <activity android:name=".SpeedometerActivity"></activity>
     </application>
 
 </manifest>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/black"
+    tools:context="com.zyzs.ewin.dialfunc.PM2d5Activity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="24sp"
+            android:background="@color/black"
+            android:text="PM2d5"
+            android:textColor="@color/white"
+            android:gravity="center"/>
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:src="@mipmap/back"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="226dp"
+            android:layout_height="226dp"
+            android:background="@drawable/pm2d5_bg_img"
+            android:layout_gravity="center">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="35.2dp"
+                        android:tint="@color/c_64FF96"
+                        app:srcCompat="@drawable/shuzi_3_img"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="35.2dp"
+                        android:layout_marginLeft="3dp"
+                        android:tint="@color/c_64FF96"
+                        app:srcCompat="@drawable/shuzi_0_img"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/pm2d5_dw_img"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="39dp"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="35.2dp"
+                        android:layout_marginLeft="3dp"
+                        android:tint="@color/c_FF5050"
+                        app:srcCompat="@drawable/shuzi_2_img"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="35.2dp"
+                        android:layout_marginLeft="3dp"
+                        android:tint="@color/c_FF5050"
+                        app:srcCompat="@drawable/shuzi_5_img"/>
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="20dp"
+                        android:layout_height="35.2dp"
+                        android:layout_marginLeft="3dp"
+                        android:tint="@color/c_FF5050"
+                        app:srcCompat="@drawable/shuzi_5_img"/>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="3dp"
+                        android:layout_gravity="bottom"
+                        android:src="@drawable/pm2d5_dw_img"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>
