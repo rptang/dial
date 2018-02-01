@@ -39,38 +39,38 @@ public class VectorDrawableUtils {
     public static final float CHARACTER_0_WIDTH = (float) 49.999;
     public static final float CHARACTER_0_HEIGHT = 88;
 
-    public static final float CHARACTER_1_WIDTH = (float) 49.999;
+    public static final float CHARACTER_1_WIDTH = (float) 10.567;
     public static final float CHARACTER_1_HEIGHT = 88;
 
-    public static final float CHARACTER_2_WIDTH = (float) 49.999;
+    public static final float CHARACTER_2_WIDTH = 50;
     public static final float CHARACTER_2_HEIGHT = 88;
 
-    public static final float CHARACTER_3_WIDTH = (float) 49.999;
+    public static final float CHARACTER_3_WIDTH = (float) 43.896;
     public static final float CHARACTER_3_HEIGHT = 88;
 
-    public static final float CHARACTER_4_WIDTH = (float) 49.999;
+    public static final float CHARACTER_4_WIDTH = (float) 49.998;
     public static final float CHARACTER_4_HEIGHT = 88;
 
-    public static final float CHARACTER_5_WIDTH = (float) 49.999;
+    public static final float CHARACTER_5_WIDTH = (float) 49.998;
     public static final float CHARACTER_5_HEIGHT = 88;
 
-    public static final float CHARACTER_6_WIDTH = (float) 49.999;
+    public static final float CHARACTER_6_WIDTH = 50;
     public static final float CHARACTER_6_HEIGHT = 88;
 
-    public static final float CHARACTER_7_WIDTH = (float) 49.999;
+    public static final float CHARACTER_7_WIDTH = (float) 43.895;
     public static final float CHARACTER_7_HEIGHT = 88;
 
-    public static final float CHARACTER_8_WIDTH = (float) 49.999;
+    public static final float CHARACTER_8_WIDTH = 50;
     public static final float CHARACTER_8_HEIGHT = 88;
 
-    public static final float CHARACTER_9_WIDTH = (float) 49.999;
+    public static final float CHARACTER_9_WIDTH = 50;
     public static final float CHARACTER_9_HEIGHT = 88;
 
-    public static final float CHARACTER_FH_WIDTH = (float) 49.999;
-    public static final float CHARACTER_FH_HEIGHT = 88;
+    public static final float CHARACTER_FH_WIDTH = 36;
+    public static final float CHARACTER_FH_HEIGHT = 11;
 
-    public static final float CHARACTER_MH_WIDTH = (float) 49.999;
-    public static final float CHARACTER_MH_HEIGHT = 88;
+    public static final float CHARACTER_MH_WIDTH = 10;
+    public static final float CHARACTER_MH_HEIGHT = 51;
 
     /**
      * 用于判断当前字符显示颜色的分界值
