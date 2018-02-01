@@ -22,7 +22,8 @@
         <activity android:name=".TemperatureActivity" />
         <activity android:name=".PM2d5Activity" />
         <activity android:name=".WallClockActivity" />
-        <activity android:name=".SpeedometerActivity"></activity>
+        <activity android:name=".SpeedometerActivity" />
+        <activity android:name=".DateTimeActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.zyzs.ewin.dialfunc;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
@@ -26,6 +27,8 @@ public class CompassActivity extends Activity implements SensorEventListener, Vi
     private ImageView imgBack;
     //定义当前角度
     private TextView tvDegree;
+    //海拔高度
+    private TextView tvAltitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,9 +55,13 @@ public class CompassActivity extends Activity implements SensorEventListener, Vi
     }
 
     private void initView(){
-        imgCompassBG = findViewById(R.id.img_compass_bg);
+        imgCompassBG = findViewById(R.id.imgCompassBG);
         imgBack = findViewById(R.id.img_back);
         tvDegree = findViewById(R.id.tv_degree);
+        tvAltitude = findViewById(R.id.tv_altitude);
+
+        Typeface tf = Typeface.createFromAsset(getAssets(), "fonts/方正兰亭纤黑简体.ttf");
+        tvAltitude.setTypeface(tf);
     }
 
     private void addEventListener(){

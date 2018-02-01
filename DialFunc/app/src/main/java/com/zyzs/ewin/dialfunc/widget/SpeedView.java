@@ -57,7 +57,7 @@ public class SpeedView extends View{
 
     private void drawPointer(Canvas canvas){
         canvas.save();
-        canvas.rotate(0, centerX, centerY);
+        canvas.rotate(currDegree, centerX, centerY);
         canvas.drawBitmap(bitmapPointer,getWidth() / 2 - 170,getWidth() / 2 - bitmapPointer.getHeight() / 2,mPaint);
         canvas.restore();
     }
@@ -75,7 +75,7 @@ public class SpeedView extends View{
      * @param currSpeed
      */
     public void setCurrSpeed(int currSpeed){
-        currDegree = (float) (90/27.45 * 36);
+        currDegree = (float)((currSpeed - 40) / (20 / 6) * (90 / 27));
         postInvalidate();
     }
 }

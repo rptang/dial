@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/black"
     tools:context="com.zyzs.ewin.dialfunc.NumberActivity">
@@ -34,17 +35,47 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.zyzs.ewin.dialfunc.widget.SpeedView
-            android:id="@+id/speed_view"
+        <FrameLayout
             android:layout_width="398dp"
             android:layout_height="351dp"
-            android:layout_gravity="center"
-            android:background="@drawable/mabiao_bg_img"/>
+            android:layout_gravity="center">
+
+            <com.zyzs.ewin.dialfunc.widget.SpeedView
+                android:id="@+id/speed_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/mabiao_bg_img"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="147dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/c_64FF96"
+                    app:srcCompat="@drawable/shuzi_8_img"/>
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:tint="@color/c_64FF96"
+                    android:layout_marginLeft="10dp"
+                    app:srcCompat="@drawable/shuzi_0_img"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
 
         <SeekBar
             android:id="@+id/speed_seek_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="600dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="100dp"
             android:max="260"
             android:progress="0"/>
 

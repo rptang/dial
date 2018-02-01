@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class MenuActivity extends Activity implements View.OnClickListener {
 
-    private Button btnCompass,btnNumber,btnSvg,btnTemperature,btnPM2d5,btnWallClock,btnSpeedTable;
+    private Button btnCompass,btnNumber,btnSvg,btnTemperature,btnPM2d5,btnWallClock,btnSpeedTable,btnDateTime;
     private Intent mIntent;
 
     @Override
@@ -29,6 +29,7 @@ public class MenuActivity extends Activity implements View.OnClickListener {
         btnPM2d5 = findViewById(R.id.btn_pm2d5);
         btnWallClock = findViewById(R.id.btn_wall_clock);
         btnSpeedTable = findViewById(R.id.btn_speed_table);
+        btnDateTime = findViewById(R.id.btn_date_time);
     }
 
     private void addEventListener(){
@@ -39,6 +40,7 @@ public class MenuActivity extends Activity implements View.OnClickListener {
         btnPM2d5.setOnClickListener(this);
         btnWallClock.setOnClickListener(this);
         btnSpeedTable.setOnClickListener(this);
+        btnDateTime.setOnClickListener(this);
     }
 
     @Override
@@ -70,6 +72,10 @@ public class MenuActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.btn_speed_table:
                 mIntent = new Intent(this,SpeedometerActivity.class);
+                startActivity(mIntent);
+                break;
+            case R.id.btn_date_time:
+                mIntent = new Intent(this,DateTimeActivity.class);
                 startActivity(mIntent);
                 break;
         }
