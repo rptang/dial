@@ -2,15 +2,14 @@ package com.zyzs.ewin.dialfunc;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.graphics.drawable.VectorDrawableCompat;
 import android.support.v7.widget.AppCompatImageView;
+import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-
+import com.zyzs.ewin.dialfunc.utils.VectorDrawableModel;
 import com.zyzs.ewin.dialfunc.utils.VectorDrawableUtils;
-
 import java.util.List;
 
 public class TemperatureActivity extends Activity {
@@ -46,41 +45,63 @@ public class TemperatureActivity extends Activity {
 
     private void initData(){
 
-        List<VectorDrawableCompat> innerTempVDList = VectorDrawableUtils.getTemperatureVDListByTemp(this,11);
+        List<VectorDrawableModel> innerTempVDList = VectorDrawableUtils.getTemperatureVDListByTemp(this,22);
 
         if(innerTempVDList.size() != 0){
 
-            ViewGroup.LayoutParams lp = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
-                    ViewGroup.LayoutParams.WRAP_CONTENT);
             llTempInner.removeAllViews(); //拿到数据后，先移除默认的UI
 
             for (int i = 0; i < innerTempVDList.size(); i++) {
 
-                ViewGroup.LayoutParams params;
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+
                 AppCompatImageView charView = new AppCompatImageView(this); //新建AppCompatImageView
+                lp.width = (int) (innerTempVDList.get(i).width * textSizePenc);
+                lp.height = (int) (innerTempVDList.get(i).height * textSizePenc);
+                lp.setMargins(0,0,3,0);
                 charView.setLayoutParams(lp);
-                charView.setImageDrawable(innerTempVDList.get(i)); //放资源后，可以拿到AppCompatImageView的LayoutParams
-                llTempInner.addView(charView);//没放资源之前，不知道AppCompatImageView有多大
-                params = charView.getLayoutParams();
-                params.width = (int) (params.width * textSizePenc);
-                params.height = (int) (params.height * textSizePenc);
-                System.out.println("params.width="+params.width);
-                System.out.println("params.height="+params.height);
-//                charView.setLayoutParams(params);
+                charView.setImageDrawable(innerTempVDList.get(i).vectorDrawableCompat);
+                llTempInner.addView(charView);
             }
 
-            AppCompatImageView childView;
-            ViewGroup.LayoutParams params;
-            for (int i = 0; i < llTempInner.getChildCount(); i++) {
-                childView = (AppCompatImageView) llTempInner.getChildAt(i);
-                params = childView.getLayoutParams();
-                params.width = (int) (params.width * textSizePenc);
-                params.height = (int) (params.height * textSizePenc);
-//                System.out.println("params.width="+params.width);
-//                System.out.println("params.height="+params.height);
-                childView.setLayoutParams(params);
-                childView.setImageDrawable(innerTempVDList.get(i));
+            ImageView tempUnit = new ImageView(this); //新建温度单位ImageView
+            LinearLayout.LayoutParams tempUnitParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            tempUnitParams.gravity = Gravity.BOTTOM;
+            tempUnit.setLayoutParams(tempUnitParams);
+            tempUnit.setImageDrawable(getResources().getDrawable(R.drawable.wendu_dw_img));
+            llTempInner.addView(tempUnit);
+        }
+
+        List<VectorDrawableModel> outerTempVDList = VectorDrawableUtils.getTemperatureVDListByTemp(this,-5);
+
+        if(outerTempVDList.size() != 0){
+
+            llTempOuter.removeAllViews(); //拿到数据后，先移除默认的UI
+
+            for (int i = 0; i < outerTempVDList.size(); i++) {
+
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                        ViewGroup.LayoutParams.WRAP_CONTENT);
+
+                AppCompatImageView charView = new AppCompatImageView(this); //新建AppCompatImageView
+                lp.width = (int) (outerTempVDList.get(i).width * textSizePenc);
+                lp.height = (int) (outerTempVDList.get(i).height * textSizePenc);
+                lp.gravity = Gravity.CENTER_VERTICAL;
+                lp.setMargins(0,0,3,0);
+                charView.setLayoutParams(lp);
+                charView.setImageDrawable(outerTempVDList.get(i).vectorDrawableCompat);
+                llTempOuter.addView(charView);
             }
+
+            ImageView tempUnit = new ImageView(this); //新建温度单位ImageView
+            LinearLayout.LayoutParams tempUnitParams = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,
+                    ViewGroup.LayoutParams.WRAP_CONTENT);
+            tempUnitParams.gravity = Gravity.BOTTOM;
+            tempUnit.setLayoutParams(tempUnitParams);
+            tempUnit.setImageDrawable(getResources().getDrawable(R.drawable.wendu_dw_img));
+            llTempOuter.addView(tempUnit);
         }
     }
 }

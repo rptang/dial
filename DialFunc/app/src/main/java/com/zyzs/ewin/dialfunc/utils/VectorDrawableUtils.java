@@ -84,19 +84,39 @@ public class VectorDrawableUtils {
      * 获取温度VectorDrawable集合
      * @return
      */
-    public static List<VectorDrawableCompat> getTemperatureVDListByTemp(Context context,int temp) {
+    public static List<VectorDrawableModel> getTemperatureVDListByTemp(Context context,int temp) {
 
         int tintColor = getColorResourceByData(context,temp);
         String[] characters = getCharactersByData(temp);
-        List<VectorDrawableCompat> temperatureVDList = new ArrayList<>();
-        VectorDrawableCompat vectorDrawableCompat = null;
+        List<VectorDrawableModel> temperatureVDList = new ArrayList<>();
+        VectorDrawableModel vectorDrawableModel = null;
 
         for (int i = 0; i < characters.length; i++) {
-            vectorDrawableCompat = getVectorDrawableByString(context,characters[i]);
-            vectorDrawableCompat.setTint(tintColor);
-            temperatureVDList.add(vectorDrawableCompat);
+            vectorDrawableModel = getVectorDrawableByString(context,characters[i]);
+            vectorDrawableModel.vectorDrawableCompat.setTint(tintColor);
+            temperatureVDList.add(vectorDrawableModel);
         }
         return temperatureVDList;
+    }
+
+    /**
+     * 获取时间VectorDrawable集合
+     * @param context
+     * @param datetime
+     * @return
+     */
+    public static List<VectorDrawableModel> getDateTimeVDListByTemp(Context context,String datetime){
+
+        String[] characters = getCharactersByDataTime(datetime);
+        List<VectorDrawableModel> dateTimeVDList = new ArrayList<>();
+        VectorDrawableModel vectorDrawableModel = null;
+
+        for (int i = 0; i < characters.length; i++) {
+            vectorDrawableModel = getVectorDrawableByString(context,characters[i]);
+            dateTimeVDList.add(vectorDrawableModel);
+        }
+
+        return dateTimeVDList;
     }
 
     /**
@@ -105,49 +125,73 @@ public class VectorDrawableUtils {
      * @param character
      * @return
      */
-    public static VectorDrawableCompat getVectorDrawableByString(Context context,String character) {
+    public static VectorDrawableModel getVectorDrawableByString(Context context,String character) {
 
-        float width,height;
-        VectorDrawableCompat vectorDrawableCompat = null;
+        VectorDrawableModel vectorDrawableModel = new VectorDrawableModel();
+
         switch (character) {
             case CHARACTER_0:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_0_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_0_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_0_WIDTH;
+                vectorDrawableModel.height = CHARACTER_0_HEIGHT;
                 break;
             case CHARACTER_1:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_1_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_1_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_1_WIDTH;
+                vectorDrawableModel.height = CHARACTER_1_HEIGHT;
                 break;
             case CHARACTER_2:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_2_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_2_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_2_WIDTH;
+                vectorDrawableModel.height = CHARACTER_2_HEIGHT;
                 break;
             case CHARACTER_3:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_3_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_3_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_3_WIDTH;
+                vectorDrawableModel.height = CHARACTER_3_HEIGHT;
                 break;
             case CHARACTER_4:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_4_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_4_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_4_WIDTH;
+                vectorDrawableModel.height = CHARACTER_4_HEIGHT;
                 break;
             case CHARACTER_5:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_5_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_5_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_5_WIDTH;
+                vectorDrawableModel.height = CHARACTER_5_HEIGHT;
                 break;
             case CHARACTER_6:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_6_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_6_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_6_WIDTH;
+                vectorDrawableModel.height = CHARACTER_6_HEIGHT;
                 break;
             case CHARACTER_7:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_7_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_7_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_7_WIDTH;
+                vectorDrawableModel.height = CHARACTER_7_HEIGHT;
                 break;
             case CHARACTER_8:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_8_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_8_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_8_WIDTH;
+                vectorDrawableModel.height = CHARACTER_8_HEIGHT;
                 break;
             case CHARACTER_9:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_9_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_9_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_9_WIDTH;
+                vectorDrawableModel.height = CHARACTER_9_HEIGHT;
                 break;
             case CHARACTER_FH:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_fh_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_fh_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_FH_WIDTH;
+                vectorDrawableModel.height = CHARACTER_FH_HEIGHT;
                 break;
             case CHARACTER_MH:
-                vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_mh_img,context.getTheme());
+                vectorDrawableModel.vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), R.drawable.shuzi_mh_img,context.getTheme());
+                vectorDrawableModel.width = CHARACTER_MH_WIDTH;
+                vectorDrawableModel.height = CHARACTER_MH_HEIGHT;
                 break;
         }
-        return vectorDrawableCompat;
+        return vectorDrawableModel;
     }
 
     /**
@@ -175,6 +219,17 @@ public class VectorDrawableUtils {
     public static String[] getCharactersByData(int data){
 
         char[] chars = String.valueOf(data).toCharArray();
+        String[] characters = new String[chars.length];
+
+        for (int i = 0; i < chars.length; i++) {
+            characters[i] = Character.toString(chars[i]);
+        }
+        return characters;
+    }
+
+    public static String[] getCharactersByDataTime(String datatime){
+
+        char[] chars = datatime.toCharArray();
         String[] characters = new String[chars.length];
 
         for (int i = 0; i < chars.length; i++) {

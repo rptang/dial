@@ -80,7 +80,7 @@ public class TimeClockView extends View{
         Date date = new Date();
         hasPassMilliseconds = date.getTime() % oneDayMilliSeconds + 8 * 60 * 60 * 1000;
         System.out.println("hasPassMilliseconds="+hasPassMilliseconds);
-        setTime(hasPassMilliseconds);
+        setTime(hasPassMilliseconds,date);
     }
 
     private TimerTask task = new TimerTask() {
@@ -88,16 +88,30 @@ public class TimeClockView extends View{
         public void run() {
             Date date = new Date();
             hasPassMilliseconds = date.getTime() % oneDayMilliSeconds + 8 * 60 * 60 * 1000;
-            setTime(hasPassMilliseconds);
+            setTime(hasPassMilliseconds,date);
         }
     };
 
     /**
      * 应用打开初始化时间
      */
-    public void setTime(long hasPassMilliseconds) {
+    public void setTime(long hasPassMilliseconds,Date date) {
         //mHourDegree = (float) Math.floor(90 + hasPassMilliseconds / 1000 / 120);
         mHourDegree = -90 + hasPassMilliseconds / 1000 / 120;
+        if(mListener != null){
+            mListener.update(date);
+        }
         postInvalidate();
+    }
+
+    public UpdateDateListener mListener;
+
+    public void setUpdateDateListener(UpdateDateListener listener){
+        this.mListener = listener;
+    }
+
+    public interface UpdateDateListener{
+
+        void update(Date date);
     }
 }
