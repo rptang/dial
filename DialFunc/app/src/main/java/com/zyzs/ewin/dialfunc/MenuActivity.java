@@ -47,7 +47,7 @@ public class MenuActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.btn_compass:
-                mIntent = new Intent(this,CompassActivity.class);
+                mIntent = new Intent(this,SpeedometerActivity.class);
                 startActivity(mIntent);
                 break;
             case R.id.btn_number:

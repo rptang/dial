@@ -5,6 +5,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import android.graphics.PaintFlagsDrawFilter;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
@@ -52,6 +55,7 @@ public class SpeedView extends View{
 
     @Override
     protected void onDraw(Canvas canvas) {
+        canvas.setDrawFilter(new PaintFlagsDrawFilter(0, Paint.ANTI_ALIAS_FLAG|Paint.FILTER_BITMAP_FLAG));
         drawPointer(canvas);
     }
 
@@ -67,6 +71,8 @@ public class SpeedView extends View{
      */
     private void initData(Context context) {
         mPaint = new Paint();
+        mPaint.setFilterBitmap(true);
+        mPaint.setAntiAlias(true);
         bitmapPointer = BitmapFactory.decodeResource(context.getResources(),R.drawable.mabiao_zz_img);
     }
 
